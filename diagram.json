@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard", "id": "bb1", "top": -3, "left": -35.6, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 479.47, "left": 197.4, "attrs": {} },
+    { "type": "wokwi-rgb-led", "id": "rgb1", "top": -245.6, "left": 29.9, "attrs": {} },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -257.7,
+      "left": 82.3,
+      "attrs": { "distance": "378" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -122.4,
+      "left": 366.6,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic2",
+      "top": 302.19,
+      "left": 163.23,
+      "attrs": { "distance": "372" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic3",
+      "top": 310.34,
+      "left": 479.14,
+      "attrs": { "distance": "392" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic4",
+      "top": -264.4,
+      "left": 436.34,
+      "attrs": { "distance": "400" }
+    },
+    { "type": "wokwi-rgb-led", "id": "rgb2", "top": 319.66, "left": 53.52, "attrs": {} },
+    { "type": "wokwi-rgb-led", "id": "rgb3", "top": 328.42, "left": 672.28, "attrs": {} },
+    { "type": "wokwi-rgb-led", "id": "rgb4", "top": -253.53, "left": 624.96, "attrs": {} }
+  ],
+  "connections": [
+    [ "ultrasonic1:GND", "bb1:tn.16", "black", [ "v0" ] ],
+    [ "ultrasonic1:VCC", "bb1:tp.14", "red", [ "v0" ] ],
+    [ "bb1:tp.1", "bb1:bp.1", "red", [ "v1.58", "h-72.89", "v165.81" ] ],
+    [ "bb1:tn.1", "bb1:bn.1", "black", [ "v0.99", "h-79.94", "v165.81" ] ],
+    [ "uno:5V", "bb1:bp.10", "red", [ "v37.38", "h-240.04", "v-492.39" ] ],
+    [ "uno:GND.2", "bb1:bn.10", "black", [ "v43.39", "h-260.57", "v-13.04" ] ],
+    [ "bz1:2", "uno:5", "gray", [ "v0" ] ],
+    [ "ultrasonic2:VCC", "bb1:bp.12", "red", [ "v28.21", "h-90.57", "v-1.1", "h1.64" ] ],
+    [ "ultrasonic2:GND", "bb1:bn.31", "black", [ "v26.01", "h86.58" ] ],
+    [ "ultrasonic3:VCC", "bb1:bp.41", "red", [ "v17.31", "h-90.82", "v-238.94", "h2.19" ] ],
+    [ "ultrasonic3:GND", "bb1:bn.50", "black", [ "v14.57", "h79.2", "v-224.14" ] ],
+    [ "ultrasonic4:GND", "bb1:tn.48", "black", [ "v0" ] ],
+    [ "ultrasonic4:VCC", "bb1:tp.45", "red", [ "v0" ] ],
+    [ "bz1:1", "bb1:tn.35", "black", [ "v0" ] ],
+    [ "ultrasonic1:TRIG", "bb1:19t.b", "green", [ "v0" ] ],
+    [ "ultrasonic1:ECHO", "bb1:20t.b", "blue", [ "v0" ] ],
+    [ "uno:13", "bb1:19t.c", "green", [ "v-40.51", "h18.25", "v-169.04", "h-164.76" ] ],
+    [ "uno:12", "bb1:20t.c", "blue", [ "v-34.1", "h14.1", "v-180.81", "h3.21" ] ],
+    [ "ultrasonic4:TRIG", "bb1:56t.b", "green", [ "v0" ] ],
+    [ "ultrasonic4:ECHO", "bb1:57t.b", "blue", [ "v0" ] ],
+    [ "ultrasonic2:TRIG", "uno:11", "orange", [ "v52", "h-0.85" ] ],
+    [ "ultrasonic2:ECHO", "uno:10", "#8f4814", [ "v40.79", "h99.51" ] ],
+    [ "ultrasonic3:TRIG", "uno:9", "violet", [ "v31.36", "h-197.66" ] ],
+    [ "ultrasonic3:ECHO", "uno:8", "gray", [ "v40.09", "h-200.67" ] ],
+    [ "uno:7", "bb1:56t.c", "orange", [ "v-31.42", "h362.46", "v-388.55" ] ],
+    [ "uno:6", "bb1:57t.a", "gray", [ "v-25.83", "h362.75", "v-412.31" ] ],
+    [ "rgb2:COM", "bb1:bn.2", "black", [ "v14.58", "h-91.23" ] ],
+    [ "rgb1:COM", "bb1:tn.5", "black", [ "v173.53", "h7.03" ] ],
+    [ "rgb4:COM", "bb1:tn.50", "black", [ "v222.52", "h-2.07" ] ],
+    [ "rgb3:COM", "bb1:bn.49", "black", [ "v5.69", "h-24.98", "v-206.42" ] ],
+    [ "rgb4:R", "bb1:63b.f", "red", [ "v0" ] ],
+    [ "rgb4:G", "bb1:61b.g", "green", [ "v340.23", "h-23.37" ] ],
+    [ "rgb1:R", "bb1:6t.b", "red", [ "v0" ] ],
+    [ "rgb1:G", "bb1:8t.b", "green", [ "v0" ] ],
+    [ "rgb2:R", "uno:A0", "red", [ "v415.34", "h345.54" ] ],
+    [ "rgb2:G", "uno:A1", "green", [ "v401.07", "h339.31" ] ],
+    [ "rgb3:R", "uno:A2", "red", [ "v341.75", "h-247.28" ] ],
+    [ "rgb3:G", "uno:A3", "green", [ "v322.3", "h-263.89" ] ],
+    [ "uno:4", "bb1:6t.d", "red", [ "v-389.59", "h-6.11" ] ],
+    [ "uno:3", "bb1:8t.d", "green", [ "v-391.21", "h3.83" ] ],
+    [ "uno:2", "bb1:61b.j", "green", [ "v0" ] ],
+    [ "uno:1", "bb1:63b.j", "red", [ "v-324.78", "h140.37" ] ]
+  ],
+  "dependencies": {}
+}
